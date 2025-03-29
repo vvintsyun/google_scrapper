@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>SEO Rank Checker</h1>
+
+  <div>
+    <label>Keyword:</label>
+    <input [(ngModel)]="keyword" type="text" placeholder="Enter keyword" />
+  </div>
+
+  <div>
+    <label>Website URL:</label>
+    <input [(ngModel)]="url" type="text" placeholder="Enter website URL" />
+  </div>
+
+  <button (click)="search()" [disabled]="isLoading">Search</button>
+
+  <p *ngIf="isLoading">Searching...</p>
+  <p *ngIf="error" class="error">{{ error }}</p>
+  <p *ngIf="result" class="result">{{ result }}</p>
+</div>
